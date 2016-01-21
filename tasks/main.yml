@@ -2,6 +2,7 @@
 - name: install required packages
   pkgin: name="{{ item }}" state="present"
   ignore_errors: yes
+  notify: enable nginx
   with_items: "{{ net_nginx_packages }}"
   tags:
           - nginx
