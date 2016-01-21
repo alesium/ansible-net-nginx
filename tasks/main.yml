@@ -1,0 +1,15 @@
+---
+- name: install required packages
+  pkgin: name="{{ item }}" state="present"
+  ignore_errors: yes
+  with_items: "{{ net_nginx_packages }}"
+  tags:
+          - nginx
+          - install
+
+- name: copy nginx configuration
+  template: src="{{ net_nginx_config_file_src }}" dest="{{ net_nginx_config_file_dest }}" backup="yes" owner="root" group="root" mode="0644"
+  notify: restart nginx
+  tags:
+          - nginx
+          - update
