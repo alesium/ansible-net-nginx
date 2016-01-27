@@ -8,9 +8,23 @@
           - nginx
           - install
 
+- name: execute pre nginx configuration tasks
+  include: "{{ net_nginx_pre_include }}"
+  when: net_nginx_pre_include is defined
+  tags:
+         - nginx
+         - update
+
 - name: copy nginx configuration
   template: src="{{ net_nginx_config_file_src }}" dest="{{ net_nginx_config_file_dest }}" backup="yes" owner="root" group="root" mode="0644"
   notify: restart nginx
+  tags:
+          - nginx
+          - update
+
+- name: execute post nginx configuration tasks
+  include: "{{ net_nginx_post_include }}"
+  when: net_nginx_post_include is defined
   tags:
           - nginx
           - update
