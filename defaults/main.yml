@@ -1,6 +1,6 @@
 ---
-net_haproxy_packages:
+net_nginx_packages:
     - "nginx"
-net_haproxy_service_name: "pkgsrc/nginx"
-net_haproxy_config_file_src: "nginx.conf.j2"
-net_haproxy_config_file_dest: "/opt/local/etc/nginx/nginx.conf"
+net_nginx_service_name: "pkgsrc/nginx"
+net_nginx_config_file_src: "nginx.conf.j2"
+net_nginx_config_file_dest: "/opt/local/etc/nginx/nginx.conf"
