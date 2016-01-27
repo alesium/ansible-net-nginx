@@ -4,3 +4,5 @@ net_nginx_packages:
 net_nginx_service_name: "pkgsrc/nginx"
 net_nginx_config_file_src: "nginx.conf.j2"
 net_nginx_config_file_dest: "/opt/local/etc/nginx/nginx.conf"
+#net_nginx_pre_include: "../path/to.yaml"
+#net_nginx_post_include: "../path/to.yaml"
