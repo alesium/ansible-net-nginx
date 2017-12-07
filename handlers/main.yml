@@ -1,7 +1,0 @@
----
-- name: enable nginx
-  service: name="{{ net_nginx_service_name }}" state="started" enabled="yes"
-
-- name: restart nginx
-  service: name="{{ net_nginx_service_name }}" state="restarted"
-
